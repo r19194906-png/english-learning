@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English Seekho</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#f0f4ff;color:#172554}
+header{background:#2455d6;color:white;padding:25px;text-align:center}
+main{padding:16px;max-width:650px;margin:auto}
+.card{background:white;padding:18px;margin:14px 0;border-radius:15px}
+button{padding:12px;margin:4px;border:0;border-radius:8px;background:#2455d6;color:white}
+.word{padding:10px;border-bottom:1px solid #ddd}
+</style>
+</head>
+<body>
+<header>
+<h1>📘 English Seekho</h1>
+<p>Hindi se English seekho — Free Course</p>
+</header>
+<main>
+<div class="card">
+<h2>Welcome, Learner! 👋</h2>
+<p>Roz English seekho aur practice karo.</p>
+<button onclick="show('vocab')">Vocabulary</button>
+<button onclick="show('grammar')">Grammar</button>
+<button onclick="show('tenses')">Tenses</button>
+<button onclick="show('daily')">Daily Sentences</button>
+<button onclick="show('quiz')">Quiz</button>
+</div>
+<div class="card" id="lesson">
+<h2>Start Learning!</h2>
+<p>Upar kisi topic par tap karo.</p>
+</div>
+</main>
+<script>
+const lessons={
+vocab:"<h2>Vocabulary 📚</h2><div class='word'>Apple = सेब</div><div class='word'>Water = पानी</div><div class='word'>Friend = दोस्त</div><div class='word'>Learn = सीखना</div><div class='word'>Beautiful = सुंदर</div><div class='word'>Happy = खुश</div>",
+grammar:"<h2>Grammar ✍️</h2><p>Noun = किसी व्यक्ति, जगह या चीज़ का नाम।</p><p>Verb = काम बताने वाला शब्द।</p><p>Pronoun = I, You, He, She, We, They</p><p>Example: I read a book. = मैं किताब पढ़ता/पढ़ती हूँ।</p>",
+tenses:"<h2>Tenses ⏰</h2><p>Present: I play. = मैं खेलता/खेलती हूँ।</p><p>Past: I played. = मैंने खेला।</p><p>Future: I will play. = मैं खेलूँगा/खेलूँगी।</p>",
+daily:"<h2>Daily Sentences 💬</h2><p>How are you? = तुम कैसे हो?</p><p>I am fine. = मैं ठीक हूँ।</p><p>Thank you. = धन्यवाद।</p><p>I am learning English. = मैं अंग्रेज़ी सीख रहा/रही हूँ।</p>",
+quiz:"<h2>Quiz 🧠</h2><p>Apple का हिंदी अर्थ क्या है?</p><button onclick=\"document.getElementById('answer').innerText='Correct! Apple = सेब 🍎'\">सेब</button><button onclick=\"document.getElementById('answer').innerText='Try again, bro!'\">पानी</button><p id='answer'></p>"
+};
+function show(topic){
+document.getElementById('lesson').innerHTML=lessons[topic];
+}
+</script>
+</body>
+</html>
